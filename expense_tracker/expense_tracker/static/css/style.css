@@ -1,0 +1,36 @@
+/* Custom styles for Expense Tracker */
+
+/* Global body styling for a clean, full-height layout */
+body {
+    background-color: #f8f9fa; /* Light grey background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style for Auth/Add Transaction forms (centered card look) */
+.auth-form-container {
+    max-width: 400px;
+    margin: 40px auto; /* Center horizontally, add top margin */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard table specific styling */
+.table-hover tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Color coding for transaction types */
+.text-success {
+    font-weight: bold;
+}
+
+.text-danger {
+    font-weight: bold;
+}
+
+/* ADDED: Logo Specific Style */
+.navbar-brand span {
+    color: #ffffff; /* Ensures the text portion of the logo is clearly visible on the dark background */
+}

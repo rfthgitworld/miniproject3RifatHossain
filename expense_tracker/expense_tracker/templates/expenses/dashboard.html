@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Transactions</h2>
+<a href="{{ url_for('expenses.add_transaction') }}" class="btn btn-primary mb-3">+ Add Transaction</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Category</th>
+      <th>Note</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for t in transactions %}
+      <tr>
+        <td>{{ t['type'] }}</td>
+        <td>${{ t['amount'] }}</td>
+        <td>{{ t['category'] }}</td>
+        <td>{{ t['note'] or '' }}</td>
+        <td>{{ t['created_at'] }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

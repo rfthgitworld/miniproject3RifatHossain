@@ -41,3 +41,29 @@ def add_transaction():
             return redirect(url_for('expenses.dashboard'))
 
     return render_template('expenses/add_transaction.html', categories=categories)
+
+@bp.route('/remove/<int:id>', methods=('POST',))
+@login_required
+def remove_transaction(id):
+    db = get_db()
+    error = None
+
+    # Check if the transaction exists and belongs to the logged-in user
+    transaction = db.execute(
+        'SELECT id FROM transactions WHERE id = ? AND user_id = ?',
+        (id, g.user['id'])
+    ).fetchone()
+
+    if transaction is None:
+        error = 'Transaction not found or you do not have permission to delete it.'
+
+    if error is None:
+        db.execute(
+            'DELETE FROM transactions WHERE id = ?', (id,)
+        )
+        db.commit()
+        flash('Transaction successfully removed.', 'success')
+    else:
+        flash(error, 'danger')
+
+    return redirect(url_for('expenses.dashboard'))

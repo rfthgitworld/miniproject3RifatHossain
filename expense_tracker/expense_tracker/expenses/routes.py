@@ -10,7 +10,7 @@ bp = Blueprint('expenses', __name__, url_prefix='/expenses')
 def dashboard():
     db = get_db()
     transactions = db.execute(
-        'SELECT t.*, c.name AS category FROM transaction t '
+        'SELECT t.*, c.name AS category FROM transactions t '
         'JOIN category c ON t.category_id = c.id '
         'WHERE t.user_id = ? ORDER BY t.created_at DESC',
         (g.user['id'],)
@@ -33,7 +33,7 @@ def add_transaction():
             flash("Please provide amount and category.")
         else:
             db.execute(
-                'INSERT INTO transaction (amount, type, category_id, user_id, created_at, note) '
+                'INSERT INTO transactions (amount, type, category_id, user_id, created_at, note) '
                 'VALUES (?, ?, ?, ?, ?, ?)',
                 (amount, ttype, category_id, g.user['id'], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), note)
             )

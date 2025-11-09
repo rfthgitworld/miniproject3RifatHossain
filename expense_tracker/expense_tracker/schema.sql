@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS transaction;
+DROP TABLE IF EXISTS transactions;
 
 CREATE TABLE user (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -15,7 +15,7 @@ CREATE TABLE category (
     FOREIGN KEY (user_id) REFERENCES user (id)
 );
 
-CREATE TABLE transaction (
+CREATE TABLE transactions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     amount REAL NOT NULL,
     type TEXT CHECK(type IN ('income','expense')) NOT NULL,

@@ -57,7 +57,7 @@ First, it is highly recommended to set up a **Python Virtual Environment** to is
 
 Before running the application, you must initialize the database. This step creates the required tables (`user`, `category`, and `transactions`) and populates the `category` table with default values.
 
-1.  **Ensure you are in the project root directory** (where `app.py` is located).
+1.  **Ensure you are in the project root directory `/expense_tracker`** (where `app.py` is located).
 
 2.  **Run the Flask initialization command:**
 
@@ -75,7 +75,7 @@ Before running the application, you must initialize the database. This step crea
 
 Once the database is initialized, you can start the development server.
 
-1.  **Run the Flask Development Server:**
+1.  **Navigate to the the project root directory `/expense_tracker`. Then, run the Flask Development Server:**
 
     ```bash
     flask --app app.py run

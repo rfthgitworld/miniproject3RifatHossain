@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 First, it is highly recommended to set up a **Python Virtual Environment** to isolate project dependencies. 
 
-Note: If you're using Pycharm then skip step 1 and 2 below, as it can create and manage virtual environments automatically.
+*Note: If you're using Pycharm then skip step 1 and 2 below, as it can create and manage virtual environments automatically.*
 
 1.  **Create a Virtual Environment** (e.g., named `venv`):
 
@@ -103,7 +103,7 @@ Rifat Hossain
 
 ## Acknowledgments
 
-* **Flask** (Python web framework)
-* **Bootstrap 5** (CSS framework for styling)
-* **Bootstrap Icons** (For the clean, professional logo)
-* **SQLite** (Database)
+* [Flask (Python web framework)](https://flask.palletsprojects.com/)
+* [Bootstrap 5 (CSS framework for styling)](https://getbootstrap.com/)
+* [SQLite (Database)](https://www.sqlite.org/index.html)
+* [ChatGPT](https://chatgpt.com/share/69110877-29c0-8000-85f7-51d671ec8732)
